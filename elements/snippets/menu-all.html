@@ -1,0 +1,50 @@
+{# Configuração do limite de Nivel #}
+{% if not settings.nivelLimit %}
+{% set nivelLimit = 999 %}
+{% endif %}
+
+{# Configuração de primeiro nivel #}
+{% if not nivel %}{% set nivel = 1 %}{% endif %}
+{% if not menu %}{% set menu = categories %}{% endif %}
+
+{% set class = '' %}
+{% if modifier %}{% set class =  ' menu--' ~ modifier %}{% endif %}
+
+{% set notCategories = settings.notCategories | split(',') %}
+
+<div class="menu menu--all-{{ nivel }}{{ class }}{{ nivel > 1 ? ' menu--sub' : '' }}">
+    <ul class="menu__ul menu__ul--all-{{ nivel }}">
+        {% for category in menu %}
+        {% set hasChild = ' none ' %}
+        {% if category.children and nivel < nivelLimit %} {% set hasChild = ' menu__item--has-child' %}{% endif %}
+        {% if nivel == 2 %}
+        {% set parentName = category.name %}
+        {% endif %}
+
+        <li class="menu__item menu__item--all-{{ nivel }}{{ hasChild }}">
+            <a href="{{ category.link }}" class="menu__link menu__link--all-{{ nivel }}"
+                data-tray-tst="categoria_lvl_{{ nivel }}">
+                <div class="menu__sep">
+                    {# <svg class="menu__icon icon-{{ category.id }}">
+                        <use xlink:href="#icon-{{ category.id }}"></use>
+                    </svg> #}
+                    {% if nivel == 1 %}
+                        {% if category.images %}
+                            <span class="menu__icon"><img src="{{ category.images[0] }}" alt="{{ category.name }}"></span>
+                        {% endif %}
+                    {% endif %}
+                    <span class="menu__label">{{ category.name }}</span>
+                </div>
+            </a>
+            <ul>
+                {% if category.children and nivel < nivelLimit %}
+                <li>
+                    {% element 'snippets/menu-all' { menu: category.children, nivel: (nivel + 1), parentName: parentName  } %}
+                </li>
+                {% endif %}
+            </ul>
+        </li>
+        
+        {% endfor %}
+    </ul>
+</div>

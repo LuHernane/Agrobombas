@@ -1,0 +1,25 @@
+{% if settings.showNews %}
+
+{% if settings.activeCarousel %}
+<section class="news" data-carousel="true">
+{% else %}
+<section class="news"data-carousel="false">
+{% endif %}
+    <div class="news__container">
+        <div class="news__header">
+            <span class="news__title">
+                Not&iacute;cias
+            </span>
+        </div>
+        <div class="news__content">
+            {% element 'News.news' %}
+        </div>
+
+        <div class="news__button">
+            <a href="/noticias" class="news__link">
+                Ver Mais
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,29 @@
+<section class="newsletter" data-tray-tst="newsletter_box">
+    <div class="newsletter__container">
+        <header class="newsletter__header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="34" viewBox="0 0 46 34">
+                <path id="Caminho_611" data-name="Caminho 611" d="M40.609-34A5.414,5.414,0,0,1,46-28.574h0V-5.426A5.414,5.414,0,0,1,40.609,0H5.391A5.414,5.414,0,0,1,0-5.426H0V-28.574A5.414,5.414,0,0,1,5.391-34H40.609Zm1.8,6.534L23-12.938,3.593-27.466v22.04a1.806,1.806,0,0,0,1.65,1.8l.147.006H40.609a1.8,1.8,0,0,0,1.8-1.809h0ZM40.28-30.383H5.719L23-17.445Z" transform="translate(0 34)"/>
+              </svg>
+              
+            <h3 class="newsletter__title">
+                <strong>{{ settings.newsletter_title }}</strong><br>
+                {{ settings.newsletter_subtitle }}
+            </h3>
+        </header>
+        <div class="newsletter__main">
+            <form class="newsletter__form" action="{{ links.newsletter }}" method="post" name="newsletter" data-tray-tst="newsletter_form">
+                <div class="newsletter__box">
+                    <label for="name" style="font-size: 0">name</label>
+                    <input class="newsletter__input" id="name" name="name" type="text" placeholder="Seu nome" required>
+                </div>
+                <div class="newsletter__box">
+                    <label for="email" style="font-size: 0">email</label>
+                    <input class="newsletter__input" name="email" type="email"id="email" placeholder="Seu e-mail" data-tray-tst="newsletter_email" required>
+                </div>
+                <div class="newsletter__actions">
+                    <button class="newsletter__button" data-tray-tst="newsletter_cadastrar">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

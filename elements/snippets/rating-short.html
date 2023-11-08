@@ -1,0 +1,72 @@
+{% if product.ranking %}
+<div class="rating-short" data-stars-count="{{ product.ranking.rating }}">
+    <div class="rating-short__container">
+        {% for i in 1..5 %}
+            {% if i <= product.ranking.rating %} 
+                <span class="rating-short__star rating-short__star--actived">
+                    <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="https://www.w3.org/2000/svg"
+                        xmlns:xlink="https://www.w3.org/1999/xlink">
+                        <g id="Home" stroke="none" stroke-width="1" fill="" fill-rule="evenodd">
+                            <g id="produto-drinkauaha" transform="translate(-950.000000, -247.000000)" fill=""
+                                fill-rule="nonzero">
+                                <g id="meio" transform="translate(0.000000, 142.000000)">
+                                    <g id="produto" transform="translate(315.000000, 0.000000)">
+                                        <g id="Group-14" transform="translate(620.000000, 39.000000)">
+                                            <g id="Group-56">
+                                                <g id="Group-20">
+                                                    <g id="Group-2" transform="translate(0.000000, 66.000000)">
+                                                        <g id="Group-3-Copy-2">
+                                                            <g id="148841-copy" transform="translate(15.000000, -0.000000)">
+                                                                <polygon id="Path"
+                                                                    points="6.98288889 0.0824444444 9.14044444 4.45459259 13.9655185 5.15588889 10.4740741 8.55892593 11.2982593 13.3645556 6.98288889 11.0957778 2.66725926 13.3645556 3.49144444 8.55892593 0 5.15588889 4.82507407 4.45459259">
+                                                                </polygon>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </span>
+            {% else %}
+                <span class="rating-short__star">
+                    <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="https://www.w3.org/2000/svg"
+                        xmlns:xlink="https://www.w3.org/1999/xlink">
+                        <g id="Home" stroke="none" stroke-width="1" fill="" fill-rule="evenodd">
+                            <g id="produto-drinkauaha" transform="translate(-950.000000, -247.000000)" fill=""
+                                fill-rule="nonzero">
+                                <g id="meio" transform="translate(0.000000, 142.000000)">
+                                    <g id="produto" transform="translate(315.000000, 0.000000)">
+                                        <g id="Group-14" transform="translate(620.000000, 39.000000)">
+                                            <g id="Group-56">
+                                                <g id="Group-20">
+                                                    <g id="Group-2" transform="translate(0.000000, 66.000000)">
+                                                        <g id="Group-3-Copy-2">
+                                                            <g id="148841-copy" transform="translate(15.000000, -0.000000)">
+                                                                <polygon id="Path"
+                                                                    points="6.98288889 0.0824444444 9.14044444 4.45459259 13.9655185 5.15588889 10.4740741 8.55892593 11.2982593 13.3645556 6.98288889 11.0957778 2.66725926 13.3645556 3.49144444 8.55892593 0 5.15588889 4.82507407 4.45459259">
+                                                                </polygon>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </span>
+            {% endif %}
+        {% endfor %}
+        <span class="rating-short__votes">
+            ({{ product.ranking.count }})
+        </span>
+    </div>
+</div>
+{% endif %}

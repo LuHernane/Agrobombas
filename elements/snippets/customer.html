@@ -1,0 +1,39 @@
+<div class="customer__container">
+    <div class="customer__header" data-logged-user="false">
+        <a class="customer__link--header" href="{{ links.login }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                <path id="Caminho_395" data-name="Caminho 395" d="M17.071-7.071a9.962,9.962,0,0,0-3.8-2.384,5.779,5.779,0,0,0,2.51-4.764A5.788,5.788,0,0,0,10-20a5.788,5.788,0,0,0-5.781,5.781,5.779,5.779,0,0,0,2.51,4.764,9.962,9.962,0,0,0-3.8,2.384A9.935,9.935,0,0,0,0,0H1.563A8.438,8.438,0,0,1,18.438,0H20A9.935,9.935,0,0,0,17.071-7.071ZM10-10a4.224,4.224,0,0,1-4.219-4.219A4.224,4.224,0,0,1,10-18.437a4.224,4.224,0,0,1,4.219,4.219A4.224,4.224,0,0,1,10-10Z" transform="translate(0 20)"/>
+            </svg>
+        </a>
+        <div class="customer__main">
+            <div class="tray-hide" data-logged-user="true">
+                <div class="customer__label">
+                    <span class="customer__link--header" data-customer="name"></span>
+                </div>
+            </div>
+            <div class="tray-hide" data-logged-user="false">
+                <div class="customer__label">
+                    <a class="customer__link customer__link--icon" href="{{ links.central }}" data-tray-tst="meu_cadastro" alt="Pedidos" title="Pedidos">
+                        <span class="customer__link--header">Entrar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="customer__dropdown">
+        <div class="customer__in tray-hide" data-logged-user="false">
+            <a class="customer__button" href="{{ links.login }}">
+                Entrar
+            </a>
+            <a class="customer__link--register" href="{{ links.register }}">
+                Cadastrar
+            </a>
+        </div>
+        <div class="customer__out tray-hide" data-logged-user="true">
+            <a class="customer__link" href="{{ links.account }}">Minha conta</a>
+            <a class="customer__link" href="{{ links.orders }}">Meus pedidos</a>
+            <a class="customer__link" href="http://www2.correios.com.br/SISTEMAS/RASTREAMENTO/">Rastrear pedido</a>
+            <a class="customer__link" href="{{ links.logout }}">Sair</a>
+        </div>
+    </div>
+</div>

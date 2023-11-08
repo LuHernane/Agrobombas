@@ -1,0 +1,55 @@
+<div class="countdown__timer">
+    {% if settings.countdowPromotion %}
+      <div class="countdown__subtitle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="29" viewBox="0 0 24 29">
+          <path id="Caminho_613" data-name="Caminho 613" d="M15.6-29v2.416H13.2v2.476a11.877,11.877,0,0,1,5.707,2.15h0l1.845-1.857,1.7,1.708-1.724,1.736A12.134,12.134,0,0,1,20.4-3.457a11.945,11.945,0,0,1-16.808,0,12.134,12.134,0,0,1-.32-16.914h0L1.552-22.107l1.7-1.708,1.845,1.857a11.878,11.878,0,0,1,5.707-2.15h0v-2.476H8.4V-29ZM12-21.753a9.631,9.631,0,0,0-9.6,9.662A9.631,9.631,0,0,0,12-2.428a9.642,9.642,0,0,0,9.6-9.662A9.631,9.631,0,0,0,12-21.753ZM12-20a7.263,7.263,0,0,1,7,7.5A7.263,7.263,0,0,1,12-5a7.263,7.263,0,0,1-7-7.5h7Z" transform="translate(0 29)" fill="#8DC73F"/>
+        </svg>
+        
+
+          Resta:
+      </div>
+    
+      <div class="countdown__content">
+        <div class="countdown__circuls days">
+          <!-- <canvas id="days-canvas" width="85" height="85"></canvas>
+              <svg>
+                  <circle id="outer" cx="42" cy="42" r="40" fill="#fff" stroke-width="4" stroke="#707070" opacity="1"/>
+              </svg> -->
+          <div class="label">
+            <span id="days-value" class="value"></span><br>
+            <span>Dias</span>
+          </div>
+        </div>
+        <div class="countdown__circuls hours">
+          <!-- <canvas id="hours-canvas" width="85" height="85"></canvas>
+              <svg>
+              <circle id="outer" cx="42" cy="42" r="40" fill="#fff" stroke-width="4" stroke="#707070" opacity="1"/>
+              </svg> -->
+          <div class="label">
+            <span id="hours-value" class="value"></span><br>
+            <span>Horas</span>
+          </div>
+        </div>
+        <div class="countdown__circuls minutes">
+          <!-- <canvas id="minutes-canvas" width="85" height="85"></canvas>
+              <svg>
+              <circle id="outer" cx="42" cy="42" r="40" fill="#fff" stroke-width="4" stroke="#707070" opacity="1"/>
+              </svg> -->
+          <div class="label">
+            <span id="minutes-value" class="value"></span><br>
+            <span>Minutos</span>
+          </div>
+        </div>
+        <div class="countdown__circuls seconds">
+          <!-- <canvas id="seconds-canvas" width="85" height="85"></canvas>
+              <svg>
+              <circle id="outer" cx="42" cy="42" r="40" fill="#fff" stroke-width="4" stroke="#707070" opacity="1"/>
+              </svg> -->
+          <div class="label">
+            <span id="seconds-value" class="value"></span><br>
+            <span>Segundos</span>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>

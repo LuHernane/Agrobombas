@@ -1,0 +1,101 @@
+{% if settings.showRulers %}
+{% if settings.activeCarousel %}
+<div class="rulers" data-carousel="true">
+{% else %}
+<div class="rulers" data-carousel="false">
+{% endif %}
+    <ul class="rulers__list">
+        <li class="rulers__item">
+            <div class="rulers__box">
+                {% if settings.informationIcon01 %}
+                    <figure class="rulers__image">
+                        <img src="{{ asset(settings.informationIcon01) }}" width="40" height="40">
+                    </figure>
+                {% else %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19.2" viewBox="0 0 20 19.2">
+                  <g id="Grupo_343" data-name="Grupo 343" transform="translate(6394 -1944.738)">
+                    <path id="Caminho_313" data-name="Caminho 313" d="M20.925-10.8l-2.186-2.527,2.186-2.527a.238.238,0,0,0,.062-.247c-.031-.092-.062-.185-.156-.216l-7.121-3.914a.335.335,0,0,0-.375.062l-2.155,2.126L9.026-20.168a.335.335,0,0,0-.375-.062l-7.5,4.284A.314.314,0,0,0,1-15.7a.493.493,0,0,0,.094.277l2.53,2.157-2.186,2.9a.329.329,0,0,0-.062.247.357.357,0,0,0,.156.216L3.717-8.7c0,.031-.031.062-.031.092v2.866a1.112,1.112,0,0,0,.531.924l6.34,3.606a1.181,1.181,0,0,0,.562.154h0a1.063,1.063,0,0,0,.531-.154l6.34-3.606a1.086,1.086,0,0,0,.562-.955V-9.012l2.217-1.325a.553.553,0,0,0,.156-.216A.158.158,0,0,0,20.925-10.8Zm-10.056.832-6.152-3.39,6.152-3.7Zm.625-7.119,6.215,3.729-6.215,3.39Zm2.124-2.5,6.558,3.606-1.936,2.25-6.558-3.945Zm-4.841,0,1.936,1.911-6.59,3.945L1.874-15.638ZM4.186-12.926l6.558,3.575L8.776-6.732,2.218-10.337Zm.406,7.488a.469.469,0,0,1-.219-.37V-8.427l4.31,2.373a.285.285,0,0,0,.156.031.285.285,0,0,0,.25-.123L10.9-8.519v6.687Zm13.4-.4a.491.491,0,0,1-.25.431L11.494-1.832V-8.519l1.811,2.4a.285.285,0,0,0,.25.123.237.237,0,0,0,.156-.031L17.99-8.642Zm-4.341-.894-2-2.619,6.59-3.606,1.968,2.25Z" transform="translate(-6395 1965)"/>
+                  </g>
+                </svg>
+                {% endif %}
+                <span class="rulers__title">
+                    <strong>{{ settings.informationTitle01}}</strong>
+                    {{ settings.informationSubtitle01}}
+                </span>
+            </div>
+        </li>
+        <li class="rulers__sep">
+        </li>
+        <li class="rulers__item">
+            <div class="rulers__box">
+                {% if settings.informationIcon02 %}
+                    <figure class="rulers__image">
+                        <img src="{{ asset(settings.informationIcon02) }}" width="40" height="40">
+                    </figure>
+                {% else %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.97" height="14.978" viewBox="0 0 19.97 14.978">
+                  <g id="Grupo_353" data-name="Grupo 353" transform="translate(0 15)">
+                    <path id="Caminho_316" data-name="Caminho 316" d="M18.1-.022H1.872A1.874,1.874,0,0,1,0-1.894v-3.12a.624.624,0,0,1,.624-.624A1.874,1.874,0,0,0,2.5-7.511,1.874,1.874,0,0,0,.624-9.383.624.624,0,0,1,0-10.007v-3.12A1.874,1.874,0,0,1,1.872-15H18.1a1.874,1.874,0,0,1,1.872,1.872v3.12a.624.624,0,0,1-.624.624,1.874,1.874,0,0,0-1.872,1.872,1.874,1.874,0,0,0,1.872,1.872.624.624,0,0,1,.624.624v3.12A1.874,1.874,0,0,1,18.1-.022ZM1.248-4.454v2.559a.625.625,0,0,0,.624.624H18.1a.625.625,0,0,0,.624-.624V-4.454a3.126,3.126,0,0,1-2.5-3.058,3.126,3.126,0,0,1,2.5-3.058v-2.559a.625.625,0,0,0-.624-.624H1.872a.625.625,0,0,0-.624.624v2.559a3.126,3.126,0,0,1,2.5,3.058,3.126,3.126,0,0,1-2.5,3.058Z"/>
+                    <path id="Caminho_319" data-name="Caminho 319" d="M7.874-3.6l3.743-9.982,1.169.438L9.043-3.166Z"/>
+                    <path id="Caminho_322" data-name="Caminho 322" d="M6.872-6.256A1.874,1.874,0,0,1,5-8.128,1.874,1.874,0,0,1,6.872-10,1.874,1.874,0,0,1,8.744-8.128,1.874,1.874,0,0,1,6.872-6.256Zm0-2.5a.625.625,0,0,0-.624.624.625.625,0,0,0,.624.624A.625.625,0,0,0,7.5-8.128.625.625,0,0,0,6.872-8.752Z"/>
+                    <path id="Caminho_325" data-name="Caminho 325" d="M13.872-6.256A1.874,1.874,0,0,1,12-8.128,1.874,1.874,0,0,1,13.872-10a1.874,1.874,0,0,1,1.872,1.872,1.874,1.874,0,0,1-1.872,1.872Zm0-2.5a.625.625,0,0,0-.624.624.625.625,0,0,0,.624.624.625.625,0,0,0,.624-.624A.625.625,0,0,0,13.872-8.752Z"/>
+                  </g>
+                </svg>
+                
+                {% endif %}
+                <span class="rulers__title">
+                    <strong>{{ settings.informationTitle02}}</strong>
+                    {{ settings.informationSubtitle02}}
+                </span>
+            </div>
+        </li>
+        <li class="rulers__sep">
+        </li>
+        <li class="rulers__item">
+            <div class="rulers__box">
+                {% if settings.informationIcon03 %}
+                    <figure class="rulers__image">
+                        <img src="{{ asset(settings.informationIcon03) }}" width="40" height="40">
+                    </figure>
+                {% else %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="18.566" height="19.995" viewBox="0 0 18.566 19.995">
+                  <g id="Grupo_361" data-name="Grupo 361" transform="translate(10586.997 5369)">
+                    <path id="Caminho_328" data-name="Caminho 328" d="M17.427-21a.714.714,0,0,0-.714.714v2.609a9.265,9.265,0,0,0-13.1.212A9.265,9.265,0,0,0,1-11a.714.714,0,0,0,.714.714A.714.714,0,0,0,2.431-11a7.855,7.855,0,0,1,7.857-7.853A7.855,7.855,0,0,1,16.08-16.3L12.917-15.25a.715.715,0,0,0-.453.9.715.715,0,0,0,.9.453l4.285-1.428a.714.714,0,0,0,.488-.68v-4.285A.714.714,0,0,0,17.427-21Z" transform="translate(-10588 -5348)" />
+                    <path id="Caminho_333" data-name="Caminho 333" d="M18.855-11.717a.714.714,0,0,0-.714.714,7.855,7.855,0,0,1-7.857,7.853A7.855,7.855,0,0,1,4.492-5.7L7.655-6.755a.715.715,0,0,0,.453-.9.715.715,0,0,0-.9-.453L2.919-6.684A.714.714,0,0,0,2.431-6V-1.72a.714.714,0,0,0,.714.714.714.714,0,0,0,.714-.714V-4.328a9.265,9.265,0,0,0,13.1-.212A9.265,9.265,0,0,0,19.569-11,.714.714,0,0,0,18.855-11.717Z" transform="translate(-10588 -5348)" />
+                  </g>
+                </svg>
+                
+                {% endif %}
+                <span class="rulers__title">
+                    <strong>{{ settings.informationTitle03}}</strong>
+                    {{ settings.informationSubtitle03}}
+                </span>
+            </div>
+        </li>
+        <li class="rulers__sep">
+        </li>
+        <li class="rulers__item">
+            <div class="rulers__box">
+                
+                {% if settings.informationIcon04 %}
+                    <figure class="rulers__image">
+                        <img src="{{ asset(settings.informationIcon04) }}" width="40" height="40">
+                    </figure>
+                {% else %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16.105" height="19.167" viewBox="0 0 16.105 19.167">
+                  <g id="Grupo_369" data-name="Grupo 369" transform="translate(-447.741 -784)">
+                    <path id="Caminho_336" data-name="Caminho 336" d="M17.094-15.065c-.01-.517-.019-1.006-.019-1.479a.671.671,0,0,0-.671-.671A9.25,9.25,0,0,1,9.53-19.81a.671.671,0,0,0-.935,0,9.248,9.248,0,0,1-6.874,2.595.671.671,0,0,0-.671.671c0,.473-.009.962-.019,1.48C.939-10.249.813-3.654,8.842-.87a.67.67,0,0,0,.22.037.67.67,0,0,0,.22-.037C17.312-3.654,17.186-10.249,17.094-15.065ZM9.062-2.216C2.176-4.718,2.28-10.2,2.372-15.039c.006-.291.011-.572.015-.848a10.345,10.345,0,0,0,6.675-2.53,10.347,10.347,0,0,0,6.676,2.53c0,.276.009.557.015.848C15.845-10.2,15.949-4.718,9.062-2.216Z" transform="translate(446.731 804)"/>
+                    <path id="Caminho_341" data-name="Caminho 341" d="M11.372-12.747,8.134-9.509,6.753-10.891a.671.671,0,0,0-.949,0,.671.671,0,0,0,0,.949L7.66-8.086a.669.669,0,0,0,.474.2.669.669,0,0,0,.474-.2L12.321-11.8a.671.671,0,0,0,0-.949A.671.671,0,0,0,11.372-12.747Z" transform="translate(446.731 804)"/>
+                  </g>
+                </svg>
+                
+                {% endif %}
+                <span class="rulers__title">
+                    <strong>{{ settings.informationTitle04}}</strong>
+                    {{ settings.informationSubtitle04}}
+                </span>
+            </div>
+        </li>
+    </ul>
+</div>
+{% endif %}

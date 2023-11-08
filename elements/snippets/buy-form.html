@@ -1,0 +1,16 @@
+{% if product.available %}
+<div class="clearfix wrapper-btn-buy passo2" id="product-form-box">
+    <div data-app="product.quantity" class="product-quantity clearfix" id="quantidade">
+        <input id="quant" name="quant" class="text" size="1" type="text" value="1" maxlength="5" />
+        <div>
+            <span id="minus" ty onclick="process(1)"></span>
+            <span id="plus" onclick="process(-1)"></span>
+        </div>
+    </div>
+    <button type="submit" class="product-buy-button" id="button-buy">
+        <span>{{ Translation('comprar') }}</span>
+    </button>
+    <span id="span_erro_carrinho" class="blocoAlerta" style="display:none;">{{ Translation('selecione_opcao') }}</span>
+</div>
+<script type="text/javascript">function process(quant){var value = parseInt(document.getElementById("quant").value);value+=quant;if( value > 0){document.getElementById("quant").value = value;	}} </script>
+{% endif %}

@@ -1,0 +1,166 @@
+{# Configuração do limite de Nivel #}
+
+{% if not settings.nivelLimit %}
+{% set nivelLimit = 3 %}
+{% else %}
+{% set nivelLimit = settings.nivelLimit %}
+{% endif %}
+
+{# Configuração de primeiro nivel #}
+
+{% if not nivel %}{% set nivel = 1 %}{% endif %}
+{% if not menu %}{% set menu = categories %}{% endif %}
+
+{% set class = '' %}
+{% if modifier %}{% set class = ' menu--' ~ modifier %}{% endif %}
+
+{% set notCategories = settings.notCategories | split(',') %}
+
+{% if not utils.is_mobile %}
+<div class="menu menu--nv{{ nivel }}{{ class }}{{ nivel > 1 ? ' menu--sub' : '' }}">
+    <ul class="menu__ul menu__ul--nv{{ nivel }}">
+
+        {% if not utils.is_mobile %}
+            {% if nivel == 1 %}
+                {% if settings.showAll %}
+                    <div class="menu__all">
+                        <a href="{{ links.search }}"><span class="menu__label--all">+ Todas Categorias</span></a>
+                        {% element 'snippets/menu-all' { modifier: 'all'} %}
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+
+        {% for category in menu %}  
+            {% set hasChild = '' %} 
+                {% if loop.index < 7 %} 
+                    {% if not (category.id in notCategories) %} 
+                        {% if category.name !='' %} 
+                            {% if category.children and nivel < nivelLimit %} 
+                                {% set hasChild=' menu__item--has-child' %}
+                            {% endif %} 
+                            <li class="menu__item--{{ category.id }} menu__item--nv{{ nivel }}{{ hasChild }}">
+                                <a href="{{ category.link }}" class="menu__link menu__link--nv{{ nivel }}" data-tray-tst="categoria_lvl_{{ nivel }}">
+                                        {# <svg class="menu__icon icon-{{ category.id }}">
+                                            <use xlink:href="#icon-{{ category.id }}"></use>
+                                        </svg> #}
+                                        {% if nivel == 1 %}
+                                            {% if category.images %}
+                                                <span class="menu__icon"><img src="{{ category.images[0] }}" alt="{{ category.name }}"></span>
+                                            {% endif %}
+                                        {% endif %}
+
+                                    <span class="menu__label">{{ category.name }}</span>
+                                </a>
+                                <!-- nv2 -->
+                                <div class="menu menu--nv2{{ class }} menu--sub">
+                                    <div class="menu__ul menu__ul--nv2Container">
+                                        <ul class="menu__ul menu__ul--nv2">
+                                            {% for category2 in category.children %}
+                                                {% if loop.index <= 100 or utils.is_mobile %}
+                                                    {% set hasChild = '' %} 
+                                                    {% if category2.children and nivel < nivelLimit %} {% set hasChild = ' menu__item--has-child' %}{% endif %}
+                                                    <li class="menu__item--{{ category.id }} menu__item--nv2{{ hasChild }}">
+                                                        <a href="{{ category2.link }}" class="menu__link menu__link--nv2" data-tray-tst="categoria_lvl_2">
+                                                            <span class="menu__label">{{ category2.name }}</span>
+                                                        </a>
+                                                        <!-- nv3 -->
+                                                        <div class="menu menu--nv3{{ class }}  menu--sub">
+                                                            <div class="menu__ul menu__ul--nv3Container">
+                                                                <ul class="menu__ul menu__ul--nv3">
+                                                                    {% for category3 in category2.children %}
+                                                                        {% if loop.index <= 100 or utils.is_mobile %}
+                                                                            {% set hasChild = '' %} 
+                                                                            {% if category3.children and nivel < nivelLimit %} {% set hasChild = ' menu__item--has-child' %}{% endif %}
+                                                                            <li class="menu__item menu__item--nv3{{ hasChild }}">
+                                                                                <a href="{{ category3.link }}" class="menu__link menu__link--nv3" data-tray-tst="categoria_lvl_3">
+                                                                                    <span class="menu__label">{{ category3.name }}</span>
+                                                                                </a>
+                                                                            </li>
+                                                                        {% endif %}
+                                                                        {# {% if loop.index == 30 and not utils.is_mobile %}
+                                                                            <li class="menu__item menu__item--ver{{ hasChild }}">
+                                                                                <a href="{{ category2.link }}" class="menu__link menu__link--ver" data-tray-tst="categoria_lvl_3">
+                                                                                    Ver Mais
+                                                                                </a>
+                                                                            </li>
+                                                                        {% endif %}  #}
+                                                                    {% endfor %}
+                                                                    
+                                                                    {# {% if category.images and not utils.is_mobile %}                
+                                                                    <div class="menu__dropdown--right">
+                                                                        <div class="menu__imagem">
+                                                                            <img src="{{ category.images[0] }}" alt="{{ category.name }}" width="510px" height="430px">
+                                                                        </div>
+                                                                    </div>
+                                                                    {% endif %} #}
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                {% endif %}
+                                            {% endfor %}
+                                            {# {% if not utils.is_mobile %}
+                                                <a href="{{ category.link }}"><div class="menu__link--ver">Ver mais</div></a>
+                                            {% endif  %} #}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{#Menu Mobile#}
+{% if utils.is_mobile %}
+<div class="menu menu--nv{{ nivel }}{{ class }}{{ nivel > 1 ? ' menu--sub' : '' }}">
+    <ul class="menu__ul menu__ul--nv{{ nivel }} ">
+        {% for category in menu %}
+            {% if not utils.is_mobile %}
+                {% if loop.index < 7 and nivel == 1 %}
+                    {% set hasChild = '' %} 
+                    {% if category.children and nivel < nivelLimit %} {% set hasChild = ' menu__item--has-child' %}{% endif %}
+                    <li class="menu__item menu__item--nv{{ nivel }}{{ hasChild }}">
+                        {% if nivel == '1' %}
+                            {# <svg class="menu__icon icon-{{ category.id }}">
+                                <use xlink:href="#icon-{{ category.id }}"></use>
+                            </svg> #}
+                            <span class="menu__icon"><img src="{{ category.images[0] }}" alt="{{ category.name }}"></span>
+                        {% endif %}
+                        <a href="{{ category.link }}" class="menu__link menu__link--nv{{ nivel }}" data-tray-tst="categoria_lvl_{{ nivel }}">
+                            <span class="menu__label">{{ category.name }}</span>
+                        </a>
+                        {% if category.children and nivel < nivelLimit %}                
+                            {% element 'snippets/menu' { menu: category.children, nivel: (nivel + 1) } %}
+                        {% endif %}
+                    </li>
+                {% endif %}
+            {% else %}
+                    {% set hasChild = '' %} 
+                    {% if category.children and nivel < nivelLimit %} {% set hasChild = ' menu__item--has-child' %}{% endif %}
+                    <li class="menu__item menu__item--nv{{ nivel }}{{ hasChild }}">
+                        <a href="{{ category.link }}" class="menu__link menu__link--nv{{ nivel }}" data-tray-tst="categoria_lvl_{{ nivel }}">
+                            {# <svg class="menu__icon icon-{{ category.id }}">
+                                <use xlink:href="#icon-{{ category.id }}"></use>
+                            </svg> #}
+                            {% if nivel == '1' %}
+                                {% if category.images %}
+                                    <span class="menu__icon"><img src="{{ category.images[0] }}" alt="{{ category.name }}"></span>
+                                {% endif %}
+                            {% endif %}
+                            <span class="menu__label">{{ category.name }}</span>
+                        </a>
+                        {% if category.children and nivel < nivelLimit %}                
+                            {% element 'snippets/menu' { menu: category.children, nivel: (nivel + 1) } %}
+                        {% endif %}
+                    </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+

@@ -1,0 +1,34 @@
+<div class="flags flags{{ class }}">
+    {% if product.featured or product.new or product.free_shipping or product.additional_button%}
+    <ul class="flags__ul">
+
+        {% if product.featured %}
+            <li class="flags__item">
+                <span class="flags__title flags__featured">Destaque</span>
+            </li>
+        {% endif %}
+
+        {% if product.new %}
+            <li class="flags__item">
+                <span class="flags__title flags__new">Novidade</span>
+            </li>
+        {% endif %}
+
+        {% if product.free_shipping %}           
+            <li class="flags__item">
+                <span class="flags__title flags__free-shipping">Frete Gr&#225;tis</span>
+            </li>
+        {% endif %}
+
+        {% if product.additional_button and settings.labelExtra %}
+            <li class="flags__item">
+                <span class="flags__title flags__extra">{{ settings.labelExtra }}</span>
+            </li>
+        {% endif %}
+    </ul>
+    {% endif %}
+    
+    {% set porcentagemDesconto = 100 - ( product.price_offer / product.price ) * 100 %}
+    {% if porcentagemDesconto < 100 %} <span class="flags__discount"> - {{ porcentagemDesconto|number_format }}%</span>
+    {% endif %}
+</div>

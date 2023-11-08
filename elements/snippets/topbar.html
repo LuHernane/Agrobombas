@@ -1,0 +1,13 @@
+{% if settings.showTopbar %}
+    <div class="topbar">
+        <div class="topbar__container">
+            {% if settings.topbar %}
+              <div class="topbar__item">
+                  <span class="topbar__label">
+                      {{ settings.topbar }} 
+                  </span>
+              </div>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
